@@ -5,6 +5,7 @@ import { UserStore } from './user.store';
 import { EmployeeService } from './employee.service';
 import { EmployeeController } from './employee.controller';
 import { CookModel } from './cook/cook.model';
+import { JobModule } from './job/job.module';
 
 const IS_USER_ALLOW = false;
 
@@ -18,7 +19,7 @@ class EnvConfig {
 }
 
 @Module({
-  imports : [CookModel],
+  imports : [CookModel,JobModule],
   controllers: [UserController,StudentController,EmployeeController],
   providers : [
     { provide : UserStore , useClass : UserStore }, 
