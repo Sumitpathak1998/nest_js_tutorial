@@ -6,5 +6,6 @@ export class CustomerService {
 
     constructor( private cacheStore : CacheStoreService) {
         cacheStore.checkInitilize("customer");
+        cacheStore.getStoreNameAndType();
     }
 }

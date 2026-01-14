@@ -22,7 +22,12 @@ class EnvConfig {
 }
 
 @Module({
-  imports : [CookModel,JobModule,CacheStoreModule,ProductModule,CustomerModule],
+  imports : [CookModel,JobModule,
+    CacheStoreModule.register({
+      storeName : "YT_APP",
+      storeType : "YT_TYPE"
+    }),
+    ProductModule,CustomerModule],
   controllers: [UserController,StudentController,EmployeeController],
   providers : [
     { provide : UserStore , useClass : UserStore }, 

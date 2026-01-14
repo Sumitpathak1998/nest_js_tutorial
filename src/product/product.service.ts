@@ -6,5 +6,6 @@ export class ProductService {
 
     constructor(private cacheStore : CacheStoreService) {
         cacheStore.checkInitilize("product");
+        cacheStore.getStoreNameAndType();
     }
 }
