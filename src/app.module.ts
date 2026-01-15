@@ -9,6 +9,8 @@ import { JobModule } from './job/job.module';
 import { CacheStoreModule } from './cache-store/cacheStore.module';
 import { ProductModule } from './product/product.module';
 import { CustomerModule } from './customer/customer.module';
+import { AdminModule } from './admin/admin.module';
+import { AppRouteModule } from './app-routing.module';
 
 const IS_USER_ALLOW = false;
 
@@ -20,9 +22,8 @@ class EnvConfig {
     this.envType = "DEV";
   }
 }
-
 @Module({
-  imports : [CookModel,JobModule,
+  imports : [CookModel,JobModule,AdminModule,AppRouteModule,
     CacheStoreModule.register({
       storeName : "YT_APP",
       storeType : "YT_TYPE"

@@ -1,9 +1,10 @@
 import { Module } from "@nestjs/common";
-import { JobAppModule } from "./job_application/job.app.module";
+import { JobInterviewController } from "./controllers/job.interview.controller";
+import { JObAppController } from "./controllers/job.app.controller";
+import { JobController } from "./controllers/job.controller";
 
 @Module({
-    imports : [JobAppModule],
-    exports : [JobAppModule]    
+    controllers : [JobController,JobInterviewController,JObAppController],    
 })
 export class JobModule {
     constructor() {
